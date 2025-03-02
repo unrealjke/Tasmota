@@ -500,10 +500,18 @@ void CmndTmPoll(void) {
 }
 
 void CmndTmToken(void) {
+  bool show_asterisk = (2 == XdrvMailbox.index);
   if (XdrvMailbox.data_len > 0) {
     SettingsUpdateText(SET_TELEGRAM_TOKEN, ('"' == XdrvMailbox.data[0]) ? "" : XdrvMailbox.data);
+    if (!show_asterisk) {
+      ResponseCmndChar(SettingsText(SET_TELEGRAM_TOKEN));
+    }
+  } else {
+    show_asterisk = true;
   }
-  ResponseCmndChar(SettingsText(SET_TELEGRAM_TOKEN));
+  if (show_asterisk) {
+    Response_P(S_JSON_COMMAND_ASTERISK, XdrvMailbox.command);
+  }
 }
 
 void CmndTmChatId(void) {
