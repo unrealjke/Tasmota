@@ -270,7 +270,7 @@
 #define D_WIFIMANAGER_SET_ACCESSPOINT "Wi-Fi менеджер установить Точку Доступа"
 #define D_TRYING_TO_CONNECT "Попытка подключения устройства к сети"
 
-#define D_RESTART_IN "Перезагрзука"
+#define D_RESTART_IN "Перезагрузка"
 #define D_SECONDS "секунд"
 #define D_DEVICE_WILL_RESTART "Устройство будет перезагружено через несколько секунд"
 #define D_BUTTON_TOGGLE "Переключить"
